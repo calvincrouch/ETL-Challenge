@@ -29,7 +29,8 @@ We have decided to examine and combine two CSV files we resourced from Kaggle.co
         1. Perform a drop duplicates for any duplicate movies.
 
 1. ### SQL
-    1. Create Database
+    1. Create new database in pgAdmin 
+    1. Build the schema
     1. Query Tool
         1. Create Netflix Table
             1. title: Primary Key 
@@ -42,8 +43,13 @@ We have decided to examine and combine two CSV files we resourced from Kaggle.co
             1. director: TEXT
             1. genre: TEXT
             1. plot: TEXT
-
+    
 1. ### Load
-    1. enter step here
-    1. enter step here
-    1. enter step here 
+    1. Create config.py text file in Jupyter Notebook to store your password.
+    1. Add the config.py to your git.ignore
+    1. Connect the local database with connection string.
+    1. Connect to the engine.
+    1. Use Pandas to plug in the Netflix CSV file data into the SQL database
+    1. Use Pandas to plug in the Wiki CSV file data into the SQL database 
+    1. Confirm Netflix Data has been added by running a query
+    1. Confirm Wiki Data has been added by running a query
