@@ -1,57 +1,49 @@
-# Guidelines for ETL Project
+ETL Project
+03/27/2021
+GROUP 3: Alex Zapuchlak, Brian Halvorson , Calvin Crouch
 
-This document contains guidelines, requirements, and suggestions for Project 1.
+# MOVIE PLOTS
+![GitHub Logo](/images/wiz.jpg)
 
-## Team Effort
+## Objective
+Read, clean, and consolidate dataset files by method of ETL (Extract, Transform, and Load) using Python in Jupyter Notebook and SQL in pgAdmin. 
 
-Due to the short timeline, teamwork will be crucial to the success of this project! Work closely with your team through all phases of the project to ensure that there are no surprises at the end of the week.
+## Method
+We have decided to examine and combine two CSV files we resourced from Kaggle.com. These CSV files include the “Netflix Movies and TV Shows” dataset and the “Wikipedia Movie Plots” dataset, in which we aim to add in movie plot descriptions for the current listing of Netflix movies.
 
-Working in a group enables you to tackle more difficult problems than you'd be able to working alone. In other words, working in a group allows you to **work smart** and **dream big**. Take advantage of it!
+## Instructions
+1. ### Extract
+    1. In Jupyter notebook load, read and define dataframes from netflix movie csv (https://www.kaggle.com/shivamb/netflix-shows) and wikipedia movie plot csv (https://www.kaggle.com/jrobischon/wikipedia-movie-plots).
 
-## Project Proposal
+1. ### Transform
+    1. ##### Netflix Dataset
+        1. Filter the "type" column to only show data that has Movie as the value string and not TV Show as the value.
+        1. Filter the dataframe to only show the columns "title", "country", "release_year", and "listed_in"
+        1. Change the name of the "listed_in" column to "genre".
+        1. Filter the dataframe to only include data where the "release_year" has a value >= 2010 and <=2017.  
+    1. ##### Wiki Dataset
+        1. Check for missing "Plot" column entries by performing a .dropna.
+        1. Filter the dataframe to only include the columnts "Title", "Release Year", "Director", "Genre", "Plot".
+        1. Change the names of the columns to "title", "release_year", "director", "genre", and "plot".
+        1. Filter the dataframe to only include data where the "release_year" has a value >= 2010 and <=2017.
+        1. Perform a drop duplicates for any duplicate movies.
 
-Before you start writing any code, remember that you only have one week to complete this project. View this project as a typical assignment from work. Imagine a bunch of data came in and you and your team are tasked with migrating it to a production data base.
+1. ### SQL
+    1. Create Database
+    1. Query Tool
+        1. Create Netflix Table
+            1. title: Primary Key 
+            1. country: TEXT
+            1. release_year: INT
+            1. genre: TEXT
+        1. Create Wiki Table
+            1. title: Primary Key
+            1. release_year: INT
+            1. director: TEXT
+            1. genre: TEXT
+            1. plot: TEXT
 
-Take advantage of your Instructor and TA support during office hours and class project work time. They are a valuable resource and can help you stay on track.
-
-## Finding Data
-
-Your project must use 2 or more sources of data. We recommend the following sites to use as sources of data:
-
-* [data.world](https://data.world/)
-
-* [Kaggle](https://www.kaggle.com/)
-
-You can also use APIs or data scraped from the web. However, get approval from your instructor first. Again, there is only a week to complete this!
-
-## Data Cleanup & Analysis
-
-Once you have identified your datasets, perform ETL on the data. Make sure to plan and document the following:
-
-* The sources of data that you will extract from.
-
-* The type of transformation needed for this data (cleaning, joining, filtering, aggregating, etc).
-
-* The type of final production database to load the data into (relational or non-relational).
-
-* The final tables or collections that will be used in the production database.
-
-You will be required to submit a final technical report with the above information and steps required to reproduce your ETL process.
-
-## Project Report
-
-At the end of the week, your team will submit a Final Report that describes the following:
-
-* **E**xtract: your original data sources and how the data was formatted (CSV, JSON, pgAdmin 4, etc).
-
-* **T**ransform: what data cleaning or transformation was required.
-
-* **L**oad: the final database, tables/collections, and why this was chosen.
-
-Please upload the report to Github and submit a link to Bootcampspot.
-
-- - -
-
-### Copyright
-
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+1. ### Load
+    1. enter step here
+    1. enter step here
+    1. enter step here 
